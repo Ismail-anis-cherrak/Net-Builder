@@ -11,7 +11,7 @@ def configure():
 
         if ip_type == "ipv4":
             ip_address = typer.prompt("Enter IPv4 address")
-            cidr = typer.prompt("Enter CIDR prefix (e.g., 24)", type=int)
+            cidr = typer.prompt("Enter CIDR prefix (e.g., 24)", type=int,default=24)
             subnet_mask = cidr_to_netmask(cidr)
             config = f"""
 interface {interface}
